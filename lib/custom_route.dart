@@ -7,8 +7,7 @@ class CustomRoute {
   final Begin beginAnim;
   final Duration duration;
 
-  CustomRoute({
-    required this.page,
+  CustomRoute(this.page, {
     this.beginAnim = Begin.bottom,
     this.duration = const Duration(milliseconds: 300),
   });
@@ -22,7 +21,8 @@ class CustomRoute {
         const end = Offset.zero;
         const curve = Curves.easeOut;
 
-        final tween = Tween(begin: beginOffset, end: end).chain(CurveTween(curve: curve));
+        final tween =
+        Tween(begin: beginOffset, end: end).chain(CurveTween(curve: curve));
 
         return SlideTransition(
           position: animation.drive(tween),
